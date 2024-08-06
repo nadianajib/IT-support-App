@@ -1,8 +1,7 @@
-package model;
+package com.example.demo2.model;
 
 import jakarta.persistence.Entity;
 import lombok.NoArgsConstructor;
-import model.Personne;
 
 @Entity
 @NoArgsConstructor
