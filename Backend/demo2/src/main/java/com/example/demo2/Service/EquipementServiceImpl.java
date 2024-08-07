@@ -20,4 +20,22 @@ public class EquipementServiceImpl implements EquipementService {
     public Equipement CreateEquipement(Equipement equipement) {
         return equipementRepository.save(equipement);
     }
+
+    public List<Equipement> getAllEquipements() {
+        return equipementRepository.findAll();
+    }
+//    public Equipement updateEquipement(Long id, Equipement equipement) {
+//        if (equipementRepository.existsById(id)) {
+//            equipement.setIdEquipement(id);
+//            return equipementRepository.save(equipement);
+//        }
+//        return null;
+//    }
+//    public void deleteEquipement(Long id) {
+//        if (equipementRepository.existsById(id)) {
+//            equipementRepository.deleteById(id);
+//        }
+//    }
+//
+
 }

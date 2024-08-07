@@ -1,5 +1,7 @@
 package com.example.demo2.model;
 
+import com.example.demo2.model.EtatEquipement;
+import com.example.demo2.model.Historique;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -19,10 +21,11 @@ public class Equipement {
     private Long idEquipement;
     private String nom;
     private String  description;
+
     private EtatEquipement etat;
 
     @JsonIgnore
     @OneToMany(mappedBy = "equipement")
-    private List<Panne> pannes;
+    private List<Historique> historiques;
 
 }
