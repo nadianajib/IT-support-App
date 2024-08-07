@@ -24,7 +24,5 @@ public class Panne {
     private LocalDate dateSignalement;
     private EtatPanne etatPanne;
 
-    @ManyToOne
-    @JoinColumn(name = "idEquipement", nullable = false)
-    private Equipement equipement;
+
 }

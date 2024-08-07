@@ -38,18 +38,15 @@ public class AuthenticationService {
         return AuthenticationResponse.builder()
                 .token(jwtToken)
                 .build();
-
-
     }
 
-    //Register Admin ;
+    //Register Admin ;:hna blasst user andir admin et technicien
     public AuthenticationResponse registerAdmin(RegisterRequest request) {
-        var user = Utilisateur.builder()
-                .nom(request.getNom())
-                .email(request.getEmail())
-                .password(passwordEncoder.encode(request.getPassword()))
-                .role(Role.ADMIN)
-                .build();
+        var user = new Utilisateur();
+                user.setNom(request.getNom());
+                user.setEmail(request.getEmail());
+                user.setPassword(passwordEncoder.encode(request.getPassword()));
+                user.setRole(Role.ADMIN);
         userRepository.save(user);
         var jwtToken = jwtService.generateToken(user);
         return AuthenticationResponse.builder()
