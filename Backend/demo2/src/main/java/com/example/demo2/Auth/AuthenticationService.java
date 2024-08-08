@@ -2,16 +2,18 @@ package com.example.demo2.Auth;
 
 import com.example.demo2.Config.JwtService;
 import com.example.demo2.dao.UserRepository;
+import com.example.demo2.dto.AuthenticationRequest;
+import com.example.demo2.dto.AuthenticationResponse;
+import com.example.demo2.dto.RegisterRequest;
+import com.example.demo2.model.Admin;
 import com.example.demo2.model.Role;
+import com.example.demo2.model.Technicien;
 import com.example.demo2.model.Utilisateur;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
-
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -42,18 +44,32 @@ public class AuthenticationService {
 
     //Register Admin ;:hna blasst user andir admin et technicien
     public AuthenticationResponse registerAdmin(RegisterRequest request) {
-        var user = new Utilisateur();
-                user.setNom(request.getNom());
-                user.setEmail(request.getEmail());
-                user.setPassword(passwordEncoder.encode(request.getPassword()));
-                user.setRole(Role.ADMIN);
-        userRepository.save(user);
-        var jwtToken = jwtService.generateToken(user);
+
+        var admin = new Admin();
+        admin.setNom(request.getNom());
+        admin.setEmail(request.getEmail());
+        admin.setPassword(passwordEncoder.encode(request.getPassword()));
+        admin.setRole(Role.ADMIN);
+        userRepository.save(admin);
+
+        var jwtToken = jwtService.generateToken(admin);
         return AuthenticationResponse.builder()
                 .token(jwtToken)
                 .build();
+    }
+    public AuthenticationResponse registerTechnicien(RegisterRequest request) {
 
+        var admin = new Technicien();
+        admin.setNom(request.getNom());
+        admin.setEmail(request.getEmail());
+        admin.setPassword(passwordEncoder.encode(request.getPassword()));
+        admin.setRole(Role.TECHNICIEN);
+        userRepository.save(admin);
 
+        var jwtToken = jwtService.generateToken(admin);
+        return AuthenticationResponse.builder()
+                .token(jwtToken)
+                .build();
     }
 
     public AuthenticationResponse authenticate(AuthenticationRequest request) {

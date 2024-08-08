@@ -2,6 +2,9 @@
 package com.example.demo2.Auth;
 
 
+import com.example.demo2.dto.AuthenticationRequest;
+import com.example.demo2.dto.AuthenticationResponse;
+import com.example.demo2.dto.RegisterRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -23,12 +26,12 @@ public class AuthenticationController {
     }
 
 
-//    @PostMapping("/Admin/registerTech")
-//    public ResponseEntity<AuthenticationResponse>registerTech(
-//            @RequestBody RegisterRequest request
-//    ) {
-//        return ResponseEntity.ok(authenticationService.registerTech(request));
-//    }
+    @PostMapping("/Admin/registerTech")
+    public ResponseEntity<AuthenticationResponse>registerTech(
+            @RequestBody RegisterRequest request
+    ) {
+        return ResponseEntity.ok(authenticationService.registerTechnicien(request));
+    }
 
     @PostMapping("/registerAdmin")
     public ResponseEntity<AuthenticationResponse>registerAdmin(
@@ -39,7 +42,7 @@ public class AuthenticationController {
 
     @PostMapping("/authenticate")
     public ResponseEntity<AuthenticationResponse>authenticate(
-            @RequestBody AuthenticationRequest  request
+            @RequestBody AuthenticationRequest request
     ) {
         return ResponseEntity.ok(authenticationService.authenticate(request));
 

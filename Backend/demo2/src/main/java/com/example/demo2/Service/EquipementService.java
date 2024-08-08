@@ -5,6 +5,7 @@ import com.example.demo2.model.Equipement;
 import java.util.List;
 
 
+
 public interface EquipementService {
     Equipement CreateEquipement(Equipement equipement);
 
