@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/tickets")
 public class TicketController {
@@ -23,5 +25,9 @@ public class TicketController {
     @PutMapping("/attribuer/{ticketId}/{technicienId}")
     public Ticket attribuerTicket(@PathVariable Long ticketId, @PathVariable Long technicienId) {
         return ticketService.attribuerTicket(ticketId, technicienId);
+    }
+    @GetMapping("/technicien/{technicienId}")
+    public List<Ticket> getTicketsByTechnicien(@PathVariable Long technicienId) {
+        return ticketService.getTicketsByTechnicien(technicienId);
     }
 }

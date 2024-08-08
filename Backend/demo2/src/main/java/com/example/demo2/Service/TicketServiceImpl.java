@@ -8,6 +8,8 @@ import com.example.demo2.model.Utilisateur;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class TicketServiceImpl implements TicketService {
 
@@ -42,4 +44,9 @@ public Ticket attribuerTicket(Long ticketId, Long technicienId) {
 
     return ticketRepository.save(ticket);
 }
+
+    @Override
+    public List<Ticket> getTicketsByTechnicien(Long technicienId) {
+        return ticketRepository.findByTechnicienId(technicienId);
+    }
 }
