@@ -22,7 +22,7 @@ public class Panne {
     private Long idPanne;
     private String description;
     private EtatPanne etatPanne;
-
+//n'hésitez pas de supprimer list d'historique et que l'historique existe dans ticket
     @JsonIgnore
     @OneToMany(mappedBy = "panne")
     private List<Historique> historiques;

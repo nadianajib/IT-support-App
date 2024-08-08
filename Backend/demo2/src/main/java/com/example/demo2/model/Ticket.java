@@ -1,8 +1,4 @@
 package com.example.demo2.model;
-import com.example.demo2.model.Equipement;
-import com.example.demo2.model.Panne;
-import com.example.demo2.model.Technicien;
-import com.example.demo2.model.Utilisateur;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,6 +16,11 @@ public class Ticket {
     private Long idTi;
     private String description;
     private LocalDateTime dateCreation;
+
+    @PrePersist
+    protected void onCreate(){
+        dateCreation = LocalDateTime.now();
+    }
 
     private EtatTicket etat;
     @ManyToOne
