@@ -1,7 +1,5 @@
 package com.example.demo2.model;
 
-import com.example.demo2.model.EtatEquipement;
-import com.example.demo2.model.Historique;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -24,8 +22,5 @@ public class Equipement {
 
     private EtatEquipement etat;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "equipement")
-    private List<Historique> historiques;
 
 }

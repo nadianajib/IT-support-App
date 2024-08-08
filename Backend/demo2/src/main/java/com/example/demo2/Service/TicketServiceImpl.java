@@ -44,9 +44,9 @@ public Ticket attribuerTicket(Long ticketId, Long technicienId) {
 
     return ticketRepository.save(ticket);
 }
-
     @Override
     public List<Ticket> getTicketsByTechnicien(Long technicienId) {
         return ticketRepository.findByTechnicienId(technicienId);
     }
+
 }

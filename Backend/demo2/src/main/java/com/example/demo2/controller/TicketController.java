@@ -1,6 +1,7 @@
 package com.example.demo2.controller;
 
 import com.example.demo2.Service.TicketService;
+import com.example.demo2.model.Technicien;
 import com.example.demo2.model.Ticket;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -27,7 +28,8 @@ public class TicketController {
         return ticketService.attribuerTicket(ticketId, technicienId);
     }
     @GetMapping("/technicien/{technicienId}")
-    public List<Ticket> getTicketsByTechnicien(@PathVariable Long technicienId) {
-        return ticketService.getTicketsByTechnicien(technicienId);
+    public ResponseEntity<List<Ticket>> getTicketsByTechnicien(@PathVariable Long technicienId) {
+        List<Ticket> tickets = ticketService.getTicketsByTechnicien(technicienId);
+        return new ResponseEntity<>(tickets, HttpStatus.OK);
     }
 }
