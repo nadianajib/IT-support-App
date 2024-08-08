@@ -1,7 +1,7 @@
 package com.example.demo2.Auth;
 
 import com.example.demo2.Config.JwtService;
-import com.example.demo2.dao.UserRepository;
+import com.example.demo2.dao.PersonneRepository;
 import com.example.demo2.dto.AuthenticationRequest;
 import com.example.demo2.dto.AuthenticationResponse;
 import com.example.demo2.dto.RegisterRequest;
@@ -20,7 +20,7 @@ import org.springframework.stereotype.Service;
 public class AuthenticationService {
 
 
-    private final UserRepository userRepository;
+    private final PersonneRepository userRepository;
 
     private final PasswordEncoder passwordEncoder;
 

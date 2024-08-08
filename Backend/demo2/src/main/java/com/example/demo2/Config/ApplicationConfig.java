@@ -1,7 +1,7 @@
 
 package com.example.demo2.Config;
 
-import com.example.demo2.dao.UserRepository;
+import com.example.demo2.dao.PersonneRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,7 +19,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @RequiredArgsConstructor
 public class ApplicationConfig {
 
-    private final UserRepository userRepository;
+    private final PersonneRepository userRepository;
 
     @Bean
     public UserDetailsService userDetailsService() {

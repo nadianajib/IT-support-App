@@ -1,14 +1,19 @@
 package com.example.demo2.model;
-
 import com.example.demo2.model.Equipement;
 import com.example.demo2.model.Panne;
 import com.example.demo2.model.Technicien;
 import com.example.demo2.model.Utilisateur;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 public class Ticket {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,5 +38,4 @@ public class Ticket {
     @JoinColumn(name = "panne_id")
     private Panne panne;
 
-    // Getters, setters, constructors
 }
