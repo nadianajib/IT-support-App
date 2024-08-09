@@ -4,19 +4,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashbordComponent } from './dashbord/dashbord.component';
-import { EquipementComponent } from './equipement/equipement.component';
-import { PanneComponent } from './panne/panne.component';
+import { EquipementListComponent } from './equipement/equipement.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     DashbordComponent,
-    EquipementComponent,
-    PanneComponent
+    EquipementListComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
