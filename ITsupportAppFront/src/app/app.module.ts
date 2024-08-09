@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { DashbordComponent } from './dashbord/dashbord.component';
 import { EquipementListComponent } from './equipement/equipement.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule, 
     HttpClientModule
   ],
   providers: [],

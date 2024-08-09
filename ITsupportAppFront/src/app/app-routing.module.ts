@@ -4,6 +4,9 @@ import { EquipementListComponent } from './equipement/equipement.component';
 
 const routes: Routes = [
   { path: 'equipement', component: EquipementListComponent },
+  { path: 'add-equipement', component: EquipementListComponent }, // Route pour le formulaire d'ajout
+  { path: '', redirectTo: '/equipements', pathMatch: 'full' }
+  
   // { path: '', component: EquipementListComponent },
 ];
 
