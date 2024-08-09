@@ -8,6 +8,7 @@ import com.example.demo2.model.Utilisateur;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -26,11 +27,13 @@ public class TicketServiceImpl implements TicketService {
     private PanneRepository panneRepository;
 
     @Override
-    public Ticket creerTicket(Ticket ticket) {
+    public Ticket creerTicket(Ticket ticket, Utilisateur user) {
         ticket.setEquipement(equipementRepository.findById(ticket.getEquipement().getIdEquipement()).orElse(null));
-        ticket.setTechnicien(technicienRepository.findById((long) ticket.getTechnicien().getId()).orElse(null));
         ticket.setPanne(panneRepository.findById(ticket.getPanne().getIdPanne()).orElse(null));
-        ticket.setUtilisateur((Utilisateur) userRepository.findById(ticket.getUtilisateur().getId()).orElse(null));
+        ticket.setUtilisateur(user);
+        ticket.setEtat(EtatTicket.OUVERT);
+        ticket.setDateCreation(LocalDateTime.now());
+
         return ticketRepository.save(ticket);
     }
 
@@ -44,9 +47,9 @@ public Ticket attribuerTicket(Long ticketId, Long technicienId) {
 
     return ticketRepository.save(ticket);
 }
-    @Override
-    public List<Ticket> getTicketsByTechnicien(Long technicienId) {
-        return ticketRepository.findByTechnicienId(technicienId);
-    }
+//    @Override
+//    public List<Ticket> getTicketsByTechnicien(Long technicienId) {
+//        return ticketRepository.findByTechnicienId(technicienId);
+//    }
 
 }
