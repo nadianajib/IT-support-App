@@ -1,0 +1,22 @@
+.navbar {
+    .navbar-nav {
+      .nav-item {
+        .nav-link {
+          color: #ffffff; // Couleur du texte des liens
+  
+          &:hover {
+            color: #e0e0e0; // Couleur du texte des liens au survol
+          }
+        }
+      }
+    }
+  
+    .navbar-brand {
+      color: #ffffff; // Couleur du texte de la marque
+  
+      &:hover {
+        color: #e0e0e0; // Couleur du texte de la marque au survol
+      }
+    }
+  }
+  
