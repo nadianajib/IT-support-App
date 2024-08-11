@@ -6,12 +6,14 @@ import { EquipmentListComponent } from './equipment/list/list.component';
 import { ReactiveFormsModule } from '@angular/forms'; // Assurez-vous d'importer ReactiveFormsModule
 import { HttpClientModule } from '@angular/common/http';
 import { EquipmentAddComponent } from './addequipement/addequipement.component';
+import { EditEquipementComponent } from './edit-equipement/edit-equipement.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EquipmentListComponent,
-    EquipmentAddComponent
+    EquipmentAddComponent,
+    EditEquipementComponent
   ],
   imports: [
     BrowserModule,
