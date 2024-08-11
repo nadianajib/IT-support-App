@@ -1,32 +1,30 @@
 <div class="container">
-    <h2>Liste des Équipements</h2>
-    <button routerLink="/equipments/add" class="btn btn-primary">Ajouter un Équipement</button>
-    <table class="table mt-3">
-      <thead>
-        <tr>
-          <th>Nom</th>
-          <th>description</th>
-          <th>etat</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let equip of equipements">
-          <td>{{ equip.nom }}</td>
-          <td>{{ equip.description }}</td>
-          <td>{{ equip.etat }}</td>
-          <td>
-          </td>
-          <div *ngIf="equipements.length === 0">
-            <p>Aucun équipement trouvé.</p>
-          </div>
-          <ul *ngIf="equipements.length > 0">
-            <li *ngFor="let equipement of equipements">
-              {{ equipement.nom }} - {{ equipement.description }} - {{ equipement.etat }}
-            </li>
-          </ul>
-          
-        </tr>
-      </tbody>
-    </table>
+  <h2>Liste des Équipements</h2>
+
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
   </div>
-  
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Description</th>
+        <th>État</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let equipement of equipements">
+        <td>{{ equipement.idEquipement }}</td>
+        <td>{{ equipement.nom }}</td>
+        <td>{{ equipement.description }}</td>
+        <td>{{ equipement.etat }}</td>
+        <td>
+          <button (click)="onDelete(equipement.idEquipement)" class="btn btn-danger">Supprimer</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

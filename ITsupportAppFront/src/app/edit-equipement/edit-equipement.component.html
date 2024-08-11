@@ -1,1 +1,19 @@
-<p>edit-equipement works!</p>
+<div class="container">
+    <h2>Modifier Équipement</h2>
+    <form (ngSubmit)="onSubmit()" [formGroup]="equipementForm">
+      <div class="form-group">
+        <label for="nom">Nom</label>
+        <input id="nom" formControlName="nom" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input id="description" formControlName="description" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="etat">État</label>
+        <input id="etat" formControlName="etat" class="form-control" />
+      </div>
+      <button type="submit" class="btn btn-primary">Modifier Équipement</button>
+    </form>
+  </div>
+  

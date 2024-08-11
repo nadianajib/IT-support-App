@@ -8,23 +8,27 @@ import { EquipementService } from 'src/app/Service/equipement.service';
   styleUrls: ['./list.component.scss']
 })
 export class EquipmentListComponent implements OnInit {
-  equipements: Equipement[] = [];
+onDelete(arg0: any) {
+throw new Error('Method not implemented.');
+}
+equipements: Equipement[] = [];
+errorMessage: string = '';
 
-  constructor(private equipementService: EquipementService) { }
+constructor(private equipementService:EquipementService ) {}
 
-  ngOnInit(): void {
-    this.getEquipements();
-  }
+ngOnInit(): void {
+  this.loadEquipements();
+}
 
-  getEquipements(): void {
-    this.equipementService.getEquipements().subscribe({
-      next: (data) => {
-        console.log('Données reçues:', data);  // Vérifiez les données reçues
-        this.equipements = data;
-      },
-      error: (err) => {
-        console.error('Erreur lors de la récupération des équipements', err);
-      }
-    });
-  }
+loadEquipements(): void {
+  this.equipementService.getEquipement().subscribe(
+    (data: Equipement[]) => {
+      this.equipements = data;
+    },
+    (error) => {
+      console.error('Failed to load equipements', error);
+      this.errorMessage = 'Une erreur est survenue lors du chargement des équipements.';
+    }
+  );
+}
 }

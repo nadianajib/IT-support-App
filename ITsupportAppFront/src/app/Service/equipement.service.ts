@@ -8,16 +8,15 @@ import { Equipement } from '../model/equipement';
 })
 export class EquipementService {
 
-  private apiUrl = 'http://localhost:8089/equipements'; 
+  private apiUrl = 'http://localhost:8089/api/equipements'; 
 
   constructor(private http: HttpClient) { }
 
-  getEquipements(): Observable<Equipement[]> {
-    return this.http.get<Equipement[]>(this.apiUrl);
-  }
+  
 
-  getEquipement(id: number): Observable<Equipement> {
-    return this.http.get<Equipement>(`${this.apiUrl}/${id}`);
+  getEquipement(): Observable<Equipement[]> {
+    return this.http.get<Equipement[]>(`${this.apiUrl}/all`);
+
   }
 
   createEquipement(equipement: Equipement): Observable<Equipement> {
