@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { EquipementListComponent } from './equipement/equipement.component';
+import { EquipmentListComponent } from './equipment/list/list.component';
+import { EquipmentAddComponent } from './addequipement/addequipement.component';
 
 const routes: Routes = [
-  { path: 'equipement', component: EquipementListComponent },
-  { path: 'add-equipement', component: EquipementListComponent }, // Route pour le formulaire d'ajout
-  { path: '', redirectTo: '/equipements', pathMatch: 'full' }
+  { path: '', redirectTo: '/equipments', pathMatch: 'full' },
+  { path: 'equipments', component: EquipmentListComponent },
+  { path: 'equipments/add', component: EquipmentAddComponent }  // Route pour ajouter un équipement
+
   
-  // { path: '', component: EquipementListComponent },
+  // Autres routes
 ];
 
 @NgModule({

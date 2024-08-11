@@ -8,7 +8,8 @@ import { Equipement } from '../model/equipement';
 })
 export class EquipementService {
 
-  private apiUrl = 'http://localhost:8089/equipement'; 
+  private apiUrl = 'http://localhost:8089/equipements'; 
+
   constructor(private http: HttpClient) { }
 
   getEquipements(): Observable<Equipement[]> {
