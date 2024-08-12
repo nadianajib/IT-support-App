@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';  // Importez Router pour la navigation
 import { Equipement } from 'src/app/model/equipement';
 import { EquipementService } from 'src/app/Service/equipement.service';
 
@@ -11,7 +12,10 @@ export class EquipmentListComponent implements OnInit {
   equipements: Equipement[] = [];
   errorMessage: string = '';
 
-  constructor(private equipementService: EquipementService) {}
+  constructor(
+    private equipementService: EquipementService,
+    private router: Router  // Ajoutez Router ici
+  ) {}
 
   ngOnInit(): void {
     this.loadEquipements();
@@ -43,4 +47,8 @@ export class EquipmentListComponent implements OnInit {
       });
     }
   }
+  onEdit(id: number): void {
+    this.router.navigate(['/equipments/edit', id]);  // Redirection vers la page d'édition
+  }
+  
 }

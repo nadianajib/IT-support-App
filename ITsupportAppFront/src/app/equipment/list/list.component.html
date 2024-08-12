@@ -27,6 +27,9 @@
         <td>{{ equipement.etat }}</td>
         <td>
           <button 
+            class="btn btn-warning"
+            (click)="onEdit(equipement.idEquipement)">Modifier</button>
+          <button 
             class="btn btn-danger"
             (click)="onDelete(equipement.idEquipement)">Supprimer</button>
         </td>
