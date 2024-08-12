@@ -32,10 +32,17 @@ public class EquipementServiceImpl implements EquipementService {
         return null;
     }
     public void deleteEquipement(Long id) {
+        System.out.println("Attempting to delete equipment with ID: " + id);
         if (equipementRepository.existsById(id)) {
             equipementRepository.deleteById(id);
+            System.out.println("Equipment deleted successfully.");
+        } else {
+            System.out.println("Equipment with ID " + id + " does not exist.");
         }
     }
 
-
 }
+
+
+
+

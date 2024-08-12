@@ -1,0 +1,24 @@
+<div class="container">
+    <h2>Liste des Pannes</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Description</th>
+          <th>État</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let panne of pannes">
+          <td>{{ panne.idPanne }}</td>
+          <td>{{ panne.description }}</td>
+          <td>{{ panne.etatPanne }}</td>
+          
+        </tr>
+      </tbody>
+    </table>
+    <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+      {{ errorMessage }}
+    </div>
+  </div>

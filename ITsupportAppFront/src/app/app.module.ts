@@ -1,27 +1,27 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';  // Importez ReactiveFormsModule
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { EquipmentAddComponent } from './addequipement/addequipement.component';
-import { EquipmentListComponent } from './equipment/list/list.component';
-import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 import { EquipmentEditComponent } from './edit-equipement/edit-equipement.component';
+import { PanneListComponent } from './panne-list/panne-list.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
+import { EquipmentListComponent } from './equipment/list/list.component';
+import { EquipmentAddComponent } from './addequipement/addequipement.component';
+import { AppComponent } from './app.component';
+import { NgModule } from '@angular/core';
 
 @NgModule({
   declarations: [
     AppComponent,
     EquipmentAddComponent,
     EquipmentListComponent,
-    EquipmentEditComponent
-
+    EquipmentEditComponent,
+    PanneListComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule, 
-    HttpClientModule 
-
+    ReactiveFormsModule,
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

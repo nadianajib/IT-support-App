@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/equipements")
+@CrossOrigin(origins = "http://localhost:4200")
 public class EquipementController {
 
     @Autowired
@@ -37,4 +38,5 @@ public class EquipementController {
         equipementService.deleteEquipement(id);
         return ResponseEntity.noContent().build();
     }
+
 }
