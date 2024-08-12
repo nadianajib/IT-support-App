@@ -11,6 +11,7 @@ const routes: Routes = [
   { path: 'equipments/add', component: EquipmentAddComponent },
   { path: 'equipments/edit/:id', component: EquipmentEditComponent },
   { path: 'pannes', component: PanneListComponent },
+
   // Autres routes
 ];
 

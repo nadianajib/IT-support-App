@@ -1,5 +1,10 @@
+<!-- panne-list.component.html -->
 <div class="container">
     <h2>Liste des Pannes</h2>
+    <div class="mb-3">
+      <!-- Lien pour ajouter une nouvelle panne -->
+      <a [routerLink]="['/pannes/add']" class="btn btn-primary">Ajouter une panne</a>
+    </div>
     <table class="table table-striped">
       <thead>
         <tr>
@@ -14,7 +19,10 @@
           <td>{{ panne.idPanne }}</td>
           <td>{{ panne.description }}</td>
           <td>{{ panne.etatPanne }}</td>
-          
+          <td>
+            <!-- Liens pour éditer ou supprimer une panne -->
+            <a [routerLink]="['/pannes/edit', panne.idPanne]" class="btn btn-warning btn-sm">Éditer</a>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -22,3 +30,4 @@
       {{ errorMessage }}
     </div>
   </div>
+  
