@@ -1,0 +1,19 @@
+<form [formGroup]="equipementForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="nom">Nom :</label>
+      <input id="nom" formControlName="nom" type="text" />
+    </div>
+    <div>
+      <label for="description">Description :</label>
+      <input id="description" formControlName="description" type="text" />
+    </div>
+    <div>
+      <label for="etat">État :</label>
+      <select id="etat" formControlName="etat">
+        <option value="EN_SERVICE">En Service</option>
+        <option value="HORS_SERVICE">Hors Service</option>
+      </select>
+    </div>
+    <button type="submit" [disabled]="!equipementForm.valid">Ajouter Équipement</button>
+  </form>
+  

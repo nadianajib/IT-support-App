@@ -30,5 +30,8 @@ loadEquipements(): void {
       this.errorMessage = 'Une erreur est survenue lors du chargement des équipements.';
     }
   );
+  
 }
+
+
 }

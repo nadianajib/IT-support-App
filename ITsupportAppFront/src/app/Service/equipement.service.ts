@@ -20,7 +20,7 @@ export class EquipementService {
   }
 
   createEquipement(equipement: Equipement): Observable<Equipement> {
-    return this.http.post<Equipement>(this.apiUrl, equipement);
+    return this.http.post<Equipement>(`${this.apiUrl}/add`, equipement);
   }
 
   updateEquipement(id: number, equipement: Equipement): Observable<Equipement> {

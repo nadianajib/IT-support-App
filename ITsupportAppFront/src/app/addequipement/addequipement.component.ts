@@ -28,6 +28,7 @@ export class EquipmentAddComponent implements OnInit {
   onSubmit(): void {
     if (this.equipementForm.valid) {
       const equipement = this.equipementForm.value;
+      console.log('Données envoyées :', equipement); // Ajoutez cette ligne pour vérifier les données
       this.equipementService.createEquipement(equipement).subscribe({
         next: (data) => {
           console.log('Équipement ajouté avec succès', data);
