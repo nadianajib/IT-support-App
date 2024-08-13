@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';  // Importez Router pour la navigation
+import { Router } from '@angular/router'; 
 import { Equipement } from 'src/app/model/equipement';
 import { EquipementService } from 'src/app/Service/equipement.service';
 
@@ -14,7 +14,7 @@ export class EquipmentListComponent implements OnInit {
 
   constructor(
     private equipementService: EquipementService,
-    private router: Router  // Ajoutez Router ici
+    private router: Router  
   ) {}
 
   ngOnInit(): void {
@@ -47,8 +47,8 @@ export class EquipmentListComponent implements OnInit {
       });
     }
   }
+
   onEdit(id: number): void {
     this.router.navigate(['/equipments/edit', id]);  // Redirection vers la page d'édition
   }
-  
 }
