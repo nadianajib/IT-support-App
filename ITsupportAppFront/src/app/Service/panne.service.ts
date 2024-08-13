@@ -7,6 +7,9 @@ import { Panne } from '../model/panne';
   providedIn: 'root'
 })
 export class PanneService {
+  addPanne(newPanne: Panne) {
+    throw new Error('Method not implemented.');
+  }
 
   private apiUrl = 'http://localhost:8089/api/pannes'; 
   constructor(private http: HttpClient) { }

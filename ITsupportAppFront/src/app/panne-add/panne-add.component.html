@@ -1,0 +1,23 @@
+<div class="container">
+    <h2>Ajouter une Panne</h2>
+    <form [formGroup]="panneForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <input id="description" formControlName="description" class="form-control" />
+      </div>
+      <div class="mb-3">
+        <label for="etatPanne" class="form-label">État</label>
+        <select id="etatPanne" formControlName="etatPanne" class="form-select">
+          <option value="SIGNALEE">Signalee</option>
+          <option value="EN_COURS">En cours</option>
+          <option value="RESOLUE">Résolue</option>
+          <option value="NON_REPARABLE">Non Réparable</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Ajouter</button>
+      <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+        {{ errorMessage }}
+      </div>
+    </form>
+  </div>
+  

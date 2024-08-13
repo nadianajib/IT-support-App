@@ -4,6 +4,7 @@ import { EquipmentListComponent } from './equipment/list/list.component';
 import { EquipmentAddComponent } from './addequipement/addequipement.component';
 import { EquipmentEditComponent } from './edit-equipement/edit-equipement.component';
 import { PanneListComponent } from './panne-list/panne-list.component';
+import { PanneAddComponent } from './panne-add/panne-add.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/equipments', pathMatch: 'full' },
@@ -11,6 +12,8 @@ const routes: Routes = [
   { path: 'equipments/add', component: EquipmentAddComponent },
   { path: 'equipments/edit/:id', component: EquipmentEditComponent },
   { path: 'pannes', component: PanneListComponent },
+  { path: 'pannes/add', component: PanneAddComponent }
+
 
   // Autres routes
 ];
