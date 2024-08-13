@@ -11,6 +11,7 @@ import { EquipmentEditComponent } from './edit-equipement/edit-equipement.compon
 import { PanneListComponent } from './panne-list/panne-list.component';
 import { PanneAddComponent } from './panne-add/panne-add.component';
 import { PanneEditComponent } from './panne-edit/panne-edit.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PanneEditComponent } from './panne-edit/panne-edit.component';
     EquipmentEditComponent,
     PanneListComponent,
     PanneAddComponent,
-    PanneEditComponent
+    PanneEditComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
