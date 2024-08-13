@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // Ajoutez FormsModule ici
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -24,6 +24,7 @@ import { PanneEditComponent } from './panne-edit/panne-edit.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule, // Ajoutez FormsModule ici
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule
