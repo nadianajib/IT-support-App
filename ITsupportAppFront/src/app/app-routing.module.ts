@@ -7,6 +7,7 @@ import { PanneListComponent } from './panne-list/panne-list.component';
 import { PanneAddComponent } from './panne-add/panne-add.component';
 import { PanneEditComponent } from './panne-edit/panne-edit.component';
 import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
  // { path: '', redirectTo: '/equipments', pathMatch: 'full' },
@@ -16,7 +17,10 @@ const routes: Routes = [
   { path: 'pannes', component: PanneListComponent },
   { path: 'pannes/add', component: PanneAddComponent },
   { path: 'pannes/edit/:id', component: PanneEditComponent },
-  {path: "login", component: LoginComponent }
+  {path: "login", component: LoginComponent },
+  { path: '', component: HomeComponent }, 
+
+
 
   // Autres routes
 ];
