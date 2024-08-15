@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'pannes/add', component: PanneAddComponent },
   { path: 'pannes/edit/:id', component: PanneEditComponent },
   {path: "login", component: LoginComponent },
-  { path: '', component: HomeComponent }, 
+  { path: 'Home', component: HomeComponent }, 
 
 
 
