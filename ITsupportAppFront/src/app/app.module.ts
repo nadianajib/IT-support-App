@@ -12,6 +12,7 @@ import { PanneListComponent } from './panne-list/panne-list.component';
 import { PanneAddComponent } from './panne-add/panne-add.component';
 import { PanneEditComponent } from './panne-edit/panne-edit.component';
 import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { LoginComponent } from './login/login.component';
     PanneListComponent,
     PanneAddComponent,
     PanneEditComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

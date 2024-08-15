@@ -1,22 +1,58 @@
 .navbar {
-    .navbar-nav {
-      .nav-item {
-        .nav-link {
-          color: #ffffff; // Couleur du texte des liens
+  background: linear-gradient(135deg, #6a11cb, #2575fc); // Dégradé de couleur
   
-          &:hover {
-            color: #e0e0e0; // Couleur du texte des liens au survol
-          }
-        }
-      }
+  .navbar-brand {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #ffffff;
+    &:hover {
+      color: #f8f9fa;
     }
+  }
   
-    .navbar-brand {
-      color: #ffffff; // Couleur du texte de la marque
+  .navbar-toggler {
+    border: none;
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 0.8)' stroke-width='2' d='M5 10h20M5 15h20M5 20h20'/%3E%3C/svg%3E");
+    }
+  }
   
+  .navbar-nav {
+    .nav-link {
+      color: #ffffff;
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+      display: flex;
+      align-items: center;
+      transition: color 0.3s ease, background-color 0.3s ease;
+      
+      i {
+        margin-right: 0.5rem;
+      }
+      
       &:hover {
-        color: #e0e0e0; // Couleur du texte de la marque au survol
+        color: #ffdd57; // Couleur d'icône au survol
+        background-color: rgba(255, 255, 255, 0.2); // Fond clair au survol
+        border-radius: 4px; // Coins arrondis au survol
       }
     }
   }
   
+  .collapse {
+    @media (max-width: 991.98px) {
+      .navbar-nav {
+        margin-top: 1rem;
+        text-align: center;
+        
+        .nav-item {
+          margin: 0;
+        }
+        
+        .nav-link {
+          padding: 1rem;
+          font-size: 1.25rem;
+        }
+      }
+    }
+  }
+}
